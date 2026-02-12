@@ -1,0 +1,14 @@
+name: Test Runner
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test-runner:
+    runs-on:
+      - self-hosted
+      - Linux
+      - x64
+    steps:
+       - uses: actions/checkout@v3
+       - run: echo "Test Runner is running on a self-hosted Windows runner."
