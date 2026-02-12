@@ -11,4 +11,8 @@ jobs:
       - x64
     steps:
        - uses: actions/checkout@v3
-       - run: echo "Test Runner is running on a self-hosted Windows runner."
+       - name: Copy files to Nginx
+         run: |
+           sudo cp -r . /var/www/html/
+           sudo chown -R www-data:www-data /var/www/html/
+       - run: echo "Deployment successful on self-hosted Linux runner."
